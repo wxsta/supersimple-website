@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>农科智眼 - 智能害虫监测系统</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.jpg" alt="农科智眼logo">
+                <span>农科智眼</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="products.html">产品介绍</a></li>
+                <li><a href="features.html">功能特点</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="images/slider0.jpg" alt="新幻灯片">
+                <img src="images/slider1.jpg" alt="智能监测">
+                <div class="slide-content">
+                    <h2>智能监测系统</h2>
+                    <p>24小时不间断监控，为您的农田保驾护航</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/slider2.jpg" alt="数据分析">
+                <div class="slide-content">
+                    <h2>精准数据分析</h2>
+                    <p>AI驱动的害虫识别系统，准确率高达99%</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/slider3.jpg" alt="专家支持">
+                <div class="slide-content">
+                    <h2>专家在线支持</h2>
+                    <p>农业专家7*24小时在线咨询服务</p>
+                </div>
+            </div>
+        </div>
+        <button class="slider-prev">&lt;</button>
+        <button class="slider-next">&gt;</button>
+        <div class="slider-dots"></div>
+    </div>
+
+    <section class="stats gradient-bg">
+        <div class="container">
+            <div class="stats-grid animate-fade-in">
+                <div class="stat-item shadow-box">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">监测设备部署</div>
+                </div>
+                <div class="stat-item shadow-box">
+                    <div class="stat-number">500,000+</div>
+                    <div class="stat-label">农田面积覆盖(亩)</div>
+                </div>
+                <div class="stat-item shadow-box">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">客户满意度</div>
+                </div>
+                <div class="stat-item shadow-box">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">省市覆盖</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="success-stories">
+        <div class="container">
+            <h2>成功案例</h2>
+            <img src="images/news0.jpg" alt="成功案例">
+            <div class="stories-slider">
+                <div class="story-slide">
+                    <div class="story-content">
+                        <h3>河南省XX农业基地</h3>
+                        <p>通过部署农科智眼系统，成功降低害虫危害率80%，年产值提升30%。</p>
+                    </div>
+                </div>
+                <!-- 添加更多案例 -->
+            </div>
+        </div>
+    </section>
+
+    <section class="news">
+        <div class="container">
+            <h2>新闻动态</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <img src="images/news1.jpg" alt="新闻1">
+                    <div class="news-content">
+                        <h3>农科智眼荣获2024年度农业科技创新奖</h3>
+                        <p>2024-03-15</p>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <img src="images/news2.jpg" alt="新闻2">
+                    <div class="news-content">
+                        <h3>新一代AI识别算法发布，准确率提升30%</h3>
+                        <p>2024-03-10</p>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <img src="images/news3.jpg" alt="新闻3">
+                    <div class="news-content">
+                        <h3>农科智眼助力春耕生产，服务千万农户</h3>
+                        <p>2024-03-05</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ai-recognition gradient-bg">
+        <div class="container">
+            <h2>AI智能识别</h2>
+            <p class="section-desc">上传农作物图片，快速识别病虫害类型</p>
+            
+            <div class="recognition-container">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content" id="uploadContent">
+                        <i class="icon-upload"></i>
+                        <p>点击或拖拽图片至此处</p>
+                        <p class="upload-tip">支持jpg、png格式，大小不超过5MB</p>
+                    </div>
+                    <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                    <img id="previewImage" style="display: none; max-width: 100%; max-height: 400px;">
+                </div>
+                
+                <div class="result-area" id="resultArea" style="display: none;">
+                    <h3>识别结果</h3>
+                    <div class="result-content">
+                        <div class="result-item">
+                            <span class="label">害虫类型：</span>
+                            <span class="value" id="pestType">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">危害程度：</span>
+                            <span class="value" id="damageLevel">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">建议措施：</span>
+                            <div class="value" id="suggestion">-</div>
+                        </div>
+                    </div>
+                    <button class="reset-btn" id="resetBtn">重新识别</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>智能害虫监测的未来</h1>
+                <p>农科智眼，您的智能农业守护者</p>
+                <button class="cta-button">了解更多</button>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>关于农科智眼</h2>
+            <div class="about-content">
+                <p>农科智眼是一款革命性的智能害虫监测系统，采用先进的AI技术，为现代农业提供精准的病虫害防控解决方案。</p>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <h2>产品介绍</h2>
+            <div class="product-cards">
+                <div class="card">
+                    <img src="images/product1.jpg" alt="智能监测器">
+                    <h3>智能监测器</h3>
+                    <p>24小时不间断监测，实时预警</p>
+                </div>
+                <div class="card">
+                    <img src="images/product2.jpg" alt="数据分析平台">
+                    <h3>数据分析平台</h3>
+                    <p>智能分析，精准预测</p>
+                </div>
+                <div class="card">
+                    <img src="images/product3.jpg" alt="移动端APP">
+                    <h3>移动端APP</h3>
+                    <p>随时随地掌握农田动态</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>核心功能</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="icon-realtime"></i>
+                    <h3>实时监测</h3>
+                    <p>24/7全天候监测农田害虫情况</p>
+                </div>
+                <div class="feature-item">
+                    <i class="icon-ai"></i>
+                    <h3>AI识别</h3>
+                    <p>准确识别多种农作物害虫</p>
+                </div>
+                <div class="feature-item">
+                    <i class="icon-alert"></i>
+                    <h3>智能预警</h3>
+                    <p>及时发现潜在威胁</p>
+                </div>
+                <div class="feature-item">
+                    <i class="icon-data"></i>
+                    <h3>数据分析</h3>
+                    <p>深度分析，指导防治</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>联系我们</h2>
+            <div class="contact-info">
+                <p>电话：13326026446</p>
+                <p>邮箱：123456789@163.com</p>
+                <p>地址：江西省南昌市经济技术开发区双港东大街1101号</p>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="您的姓名">
+                <input type="email" placeholder="您的邮箱">
+                <textarea placeholder="留言内容"></textarea>
+                <button type="submit">发送消息</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.jpg" alt="农科智眼logo">
+                <span>农科智眼</span>
+            </div>
+            <div class="footer-links">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#products">产品介绍</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>联系方式</h4>
+                <p>电话：13326026446</p>
+                <p>邮箱：123456789@163.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 农科智眼 版权所有</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 
